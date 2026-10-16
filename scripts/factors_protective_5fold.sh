@@ -65,8 +65,7 @@
 # 0.2-0.3. None of those three is protective, so the read here is clean.
 # ===========================================================================
 
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate riskcup2
+source scripts/env.sh
 export HF_HUB_OFFLINE=1 PYTHONNOUSERSITE=1 PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false
 NT="${SLURM_CPUS_PER_TASK:-4}"
 export OMP_NUM_THREADS="${NT}" MKL_NUM_THREADS="${NT}"

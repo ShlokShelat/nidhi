@@ -6,8 +6,7 @@
 #SBATCH --mem=64G
 #SBATCH --time=02:00:00
 #SBATCH --output=logs/%x_%j.out
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate qwen_env
+source scripts/env.sh qwen_env
 export TOKENIZERS_PARALLELISM=false PYTHONUNBUFFERED=1
 set -e
 python src/augment_factors.py \

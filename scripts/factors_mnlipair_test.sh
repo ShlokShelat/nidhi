@@ -38,8 +38,7 @@
 # is exactly how evidence_dump.sh once dumped 1 model instead of 8.
 
 set -u
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate riskcup2
+source scripts/env.sh
 export HF_HUB_OFFLINE=1 PYTHONNOUSERSITE=1 PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false
 
 # published definitions, hand-written confusable map -- the arms were trained

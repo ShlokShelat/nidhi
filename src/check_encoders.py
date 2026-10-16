@@ -45,8 +45,10 @@ DEFAULTS = [
 
 def snapshot_bytes(repo: str) -> float:
     """Resolved size of the local snapshot in GB, following symlinks."""
-    d = os.path.expanduser(
-        "~/.cache/huggingface/hub/models--" + repo.replace("/", "--"))
+    hub = os.environ.get("HF_HUB_CACHE") or os.path.join(
+        os.environ.get("HF_HOME") or os.path.expanduser("~/.cache/huggingface"),
+        "hub")
+    d = os.path.join(hub, "models--" + repo.replace("/", "--"))
     if not os.path.isdir(d):
         return 0.0
     tot = 0

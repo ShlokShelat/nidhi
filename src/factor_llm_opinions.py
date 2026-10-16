@@ -33,7 +33,7 @@ choice is visible.
 EVERYTHING LOCAL. No dataset post leaves the cluster.
 
 Usage:
-  python src/factor_llm_opinions.py --model /home/.../Qwen2.5-72B-Instruct \
+  python src/factor_llm_opinions.py --model Qwen/Qwen2.5-72B-Instruct \
       --load-4bit --oof artifacts/full_train.csv --extra-csv data/test.csv
 """
 

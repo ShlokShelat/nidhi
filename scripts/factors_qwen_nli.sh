@@ -34,8 +34,7 @@
 # annotation and the current model is merely imprecise.
 
 set -u
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate riskcup2
+source scripts/env.sh
 export PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false
 # published definitions only -- the encoder is the single variable
 unset FACTOR_DEFS_JSON || true

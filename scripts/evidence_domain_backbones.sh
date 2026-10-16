@@ -85,8 +85,7 @@
 # ---------------------------------------------------------------------------
 
 set -u
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate riskcup2
+source scripts/env.sh
 export HF_HUB_OFFLINE=1 PYTHONNOUSERSITE=1 PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false
 export OMP_NUM_THREADS="${SLURM_CPUS_PER_TASK:-4}"
 
@@ -133,8 +132,9 @@ def try_load(target):
     return sum(p.numel() for p in m.parameters())
 
 cands = [repo]
-hub = os.environ.get("HF_HUB_CACHE") or os.path.expanduser(
-    "~/.cache/huggingface/hub")
+hub = os.environ.get("HF_HUB_CACHE") or os.path.join(
+    os.environ.get("HF_HOME") or os.path.expanduser("~/.cache/huggingface"),
+    "hub")
 snapdir = os.path.join(hub, "models--" + repo.replace("/", "--"), "snapshots")
 for s in sorted(glob.glob(os.path.join(snapdir, "*"))):
     if os.path.isfile(os.path.join(s, "config.json")):

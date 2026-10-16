@@ -45,8 +45,7 @@
 #   sbatch --export=ALL,EXTRA=--faint-weight\ 2.0,TAG=facw2 scripts/factor_lora_pilot.sh
 
 set -u
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate riskcup2
+source scripts/env.sh
 export HF_HUB_OFFLINE=1 PYTHONNOUSERSITE=1 PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false
 export OMP_NUM_THREADS="${SLURM_CPUS_PER_TASK:-4}"
 

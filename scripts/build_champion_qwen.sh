@@ -20,8 +20,7 @@
 # After this, assembling the submission is pure CPU.
 
 set -u
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate riskcup2
+source scripts/env.sh
 export HF_HUB_OFFLINE=1 PYTHONNOUSERSITE=1 PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false
 
 QWEN="${QWEN:-Qwen/Qwen2.5-14B-Instruct}"

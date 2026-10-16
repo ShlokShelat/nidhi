@@ -95,6 +95,22 @@ make reproduce                     # prints FULL MATCH
 **Score your own posts** (one H100, about a day, needs the trained weights):
 see [docs/PIPELINE.md#running-on-unseen-data](docs/PIPELINE.md#running-on-unseen-data).
 
+**GPU environment and cluster jobs.** Every path in this repository is relative
+to the repository root, so run everything from there. The Slurm job specs in
+`scripts/` get their environment from `scripts/env.sh`, which finds conda
+wherever it is installed and activates `riskcup2` by default:
+
+```bash
+conda create -n riskcup2 python=3.10 -y && conda activate riskcup2
+pip install -r requirements.txt
+sbatch scripts/risk_nli.sh                         # from the repository root
+NIDHI_CONDA_ENV=myenv sbatch scripts/risk_nli.sh   # a different env name
+NIDHI_CONDA_ENV=none  sbatch scripts/risk_nli.sh   # use the python already on PATH
+```
+
+Pretrained models resolve through the standard Hugging Face cache
+(`HF_HOME` / `HF_HUB_CACHE`), so nothing assumes a particular home directory.
+
 ## What is public, and what is gated
 
 This repository contains **no post text**. That is a deliberate rule, and the

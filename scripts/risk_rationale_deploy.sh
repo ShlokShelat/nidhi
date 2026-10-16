@@ -48,8 +48,7 @@
 # correct supervision -- 95.4% of them have gold evidence "none".
 
 set -u
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate riskcup2
+source scripts/env.sh
 export HF_HUB_OFFLINE=1 PYTHONNOUSERSITE=1 PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false
 # Without this, torch sizes its intra-op thread pool from the machine's total
 # core count (48) regardless of how few cores Slurm actually granted, and the

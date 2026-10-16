@@ -129,8 +129,12 @@ def parse_level(text: str) -> str | None:
 
 
 def list_models():
-    roots = [os.path.expanduser("~/.cache/huggingface/hub"),
-             os.path.expanduser("~/models"), "models", "/scratch"]
+    hub = os.environ.get("HF_HUB_CACHE") or os.path.join(
+        os.environ.get("HF_HOME") or os.path.expanduser("~/.cache/huggingface"),
+        "hub")
+    # NIDHI_MODEL_DIR: an extra directory of local model copies, if any.
+    roots = [hub, "models"] + ([os.environ["NIDHI_MODEL_DIR"]]
+                               if os.environ.get("NIDHI_MODEL_DIR") else [])
     seen = []
     for r in roots:
         if not os.path.isdir(r):

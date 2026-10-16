@@ -6,8 +6,7 @@
 #SBATCH --mem=64G
 #SBATCH --time=01:00:00
 #SBATCH --output=logs/%x_%j.out
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate riskcup2
+source scripts/env.sh
 export HF_HUB_OFFLINE=1 PYTHONNOUSERSITE=1 PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false
 python src/blend_risk_saved.py \
     --val artifacts/val_split.csv --test data/test.csv \

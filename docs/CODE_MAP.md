@@ -4,6 +4,8 @@ Every source file, grouped by role, with the opening of its own docstring. This 
 
 Five files marked **[API: posts]** sent post text to a commercial LLM API (DeepSeek) during exploration; one marked **[API: definitions only]** sent only the published factor definitions. None of them is on any build path, and none was used by the submitted system. See `DATA_AND_ETHICS.md`.
 
+All paths are relative to the repository root. A handful of risk and factor experiments (`champion_oof.py`, `champion_plus_qwen.py`, `risk_ensemble_test.py`, `factor_risk_rules.py`, `make_hard_weights.py`, `risk_llm_complementarity.py`, `factor_free_diagnostics.py`, `factor_label_diagnosis.py`, `selective_override.py`, `compare_vs_champion_risk.py`, and `scripts/build_champion_qwen.sh`, `scripts/nli_risk_5fold.sh`) default to inputs under `v2_rebuild/`: the run directories and artifacts of an earlier-generation codebase. That tree is not published and is not needed for the build path or for scoring new data; pass these scripts' path arguments explicitly to point them elsewhere.
+
 | Group | Files |
 |---|---|
 | [Build path (reproduces the submission)](#build-path-reproduces-the-submission) | 10 |

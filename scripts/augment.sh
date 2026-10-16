@@ -7,8 +7,7 @@
 #SBATCH --time=02:00:00
 #SBATCH --output=logs/%x_%j.out
 
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate qwen_env
+source scripts/env.sh qwen_env
 export TOKENIZERS_PARALLELISM=false
 set -e
 
@@ -19,7 +18,7 @@ python src/augment_factors.py \
     --per-post 3 --backend hf --out artifacts/train_aug.csv
 
 # retrain factors on the augmented set (riskcup for stable DeBERTa training)
-conda activate riskcup2
+source scripts/env.sh riskcup2
 export HF_HUB_OFFLINE=1 PYTHONNOUSERSITE=1
 python src/train_factors.py --train artifacts/train_aug.csv \
     --val artifacts/val_split.csv --model microsoft/deberta-v3-large \

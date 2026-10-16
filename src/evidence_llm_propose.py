@@ -37,7 +37,7 @@ PRE-STATED BAR: of the gold spans the tagger pool MISSES, the LLM must recover
 even if selection were perfect afterwards.
 
 Usage:
-  python src/evidence_llm_propose.py --model /home/.../Qwen2.5-72B-Instruct \
+  python src/evidence_llm_propose.py --model Qwen/Qwen2.5-72B-Instruct \
       --load-4bit
 """
 

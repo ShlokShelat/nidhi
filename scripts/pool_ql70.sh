@@ -12,8 +12,7 @@
 
 set -u
 cd "$(dirname "$0")/.." || exit 1
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate riskcup2
+source scripts/env.sh
 export PYTHONNOUSERSITE=1
 
 TAG="${TAG:-ql70}"

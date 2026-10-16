@@ -29,8 +29,7 @@
 # ~35 min each, so roughly 5 hours.
 
 set -u
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate riskcup2
+source scripts/env.sh
 export HF_HUB_OFFLINE=1 PYTHONNOUSERSITE=1 PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false
 
 TRAIN=artifacts/train_split.csv

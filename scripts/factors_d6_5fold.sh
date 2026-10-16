@@ -37,8 +37,7 @@
 # ~40 min per fold per model, so about 7 hours for both.
 
 set -u
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate riskcup2
+source scripts/env.sh
 export HF_HUB_OFFLINE=1 PYTHONNOUSERSITE=1 PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false
 
 if [ ! -f artifacts/folds/train_f0.csv ]; then

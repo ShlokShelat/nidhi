@@ -41,8 +41,7 @@
 # TRAINING_ONLY_BUFFERS, so it is tolerated as an unexpected key.
 
 set -u
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate riskcup2
+source scripts/env.sh
 export HF_HUB_OFFLINE=1 PYTHONNOUSERSITE=1 PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false
 
 TAG="${TAG:-rat}"

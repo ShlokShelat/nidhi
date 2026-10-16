@@ -20,8 +20,7 @@
 # API key is involved.
 
 set -u
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate riskcup2
+source scripts/env.sh
 export PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false
 
 MODEL="${MODEL:-Qwen/Qwen2.5-14B-Instruct}"

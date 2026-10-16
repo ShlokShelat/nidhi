@@ -11,9 +11,11 @@ case "$host" in
        exit 1;;
 esac
 
-if [ "$CONDA_DEFAULT_ENV" != "riskcup" ]; then
-  echo "REFUSED: conda env is '$CONDA_DEFAULT_ENV', expected 'riskcup'."
-  echo "  conda activate riskcup"
+# Expected env: riskcup, or whatever NIDHI_CONDA_ENV names (none = skip check).
+want="${NIDHI_CONDA_ENV:-riskcup}"
+if [ "$want" != "none" ] && [ "$CONDA_DEFAULT_ENV" != "$want" ]; then
+  echo "REFUSED: conda env is '$CONDA_DEFAULT_ENV', expected '$want'."
+  echo "  conda activate $want     (or set NIDHI_CONDA_ENV)"
   exit 1
 fi
 

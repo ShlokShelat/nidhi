@@ -6,8 +6,7 @@
 #SBATCH --mem=64G
 #SBATCH --time=01:30:00
 #SBATCH --output=logs/%x_%j.out
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate riskcup2
+source scripts/env.sh
 export HF_HUB_OFFLINE=1 TOKENIZERS_PARALLELISM=false PYTHONNOUSERSITE=1
 set -e
 python src/train_risk.py --train artifacts/train_split.csv --val artifacts/val_split.csv \

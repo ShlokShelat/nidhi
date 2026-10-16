@@ -34,7 +34,7 @@ within noise of the existing risk-NLI member is not worth deploying.
 Usage:
   python src/train_risk_lora.py \
       --train artifacts/train_split.csv --val artifacts/val_split.csv \
-      --model ~/qwen/Qwen2.5-7B-Instruct \
+      --model Qwen/Qwen2.5-7B-Instruct \
       --outdir runs/risk_lora7b --epochs 3
 """
 

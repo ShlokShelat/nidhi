@@ -51,8 +51,7 @@
 #   sbatch --export=ALL,EPOCHS=4 scripts/indicator_binary.sh
 
 set -u
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate riskcup2
+source scripts/env.sh
 export HF_HUB_OFFLINE=1 PYTHONNOUSERSITE=1 PYTHONUNBUFFERED=1
 export TOKENIZERS_PARALLELISM=false
 

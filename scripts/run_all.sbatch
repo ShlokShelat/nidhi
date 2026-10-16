@@ -7,8 +7,7 @@
 #SBATCH --time=08:00:00
 #SBATCH --output=logs/%x_%j.out
 
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate riskcup
+source scripts/env.sh riskcup
 export HF_HUB_OFFLINE=1
 export PYTHONNOUSERSITE=1
 export TOKENIZERS_PARALLELISM=false

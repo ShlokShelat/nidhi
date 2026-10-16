@@ -47,8 +47,7 @@
 #   sbatch --job-name=evrob  --export=ALL,TAG=s33_rc,MODEL=FacebookAI/roberta-large-mnli,MAXLEN=512,BATCH=8,ACCUM=2 scripts/evidence_diverse.sh
 # ---------------------------------------------------------------------------
 
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate riskcup2
+source scripts/env.sh
 export HF_HUB_OFFLINE=1 PYTHONNOUSERSITE=1 PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false
 
 TAG="${TAG:?set TAG, e.g. s31_rc}"

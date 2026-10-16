@@ -37,8 +37,7 @@
 #   sbatch --export=ALL,MODEL=microsoft/deberta-v2-xlarge,TAG=dv2xl,LR=5e-6 scripts/factors_encoder.sh
 
 set -u
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate riskcup2
+source scripts/env.sh
 export HF_HUB_OFFLINE=1 PYTHONNOUSERSITE=1 PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false
 
 # Published definitions, so the ENCODER is the only thing that differs from the
