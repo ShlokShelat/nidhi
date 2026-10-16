@@ -73,7 +73,13 @@ def spans_with_conf(tokp, offs, post, thr, max_words):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--oof",
-                    default="C:/Users/PC5/Desktop/pipeline/outputs/oof.npy")
+                    default=os.path.join(
+                        os.environ.get("FRIEND_OUT_DIR", os.path.join(
+                            os.path.dirname(os.path.abspath(__file__)),
+                            "friend_pipeline", "outputs")), "oof.npy"),
+                    help="the tri-head's stage-2 OOF dump (default: "
+                         "src/friend_pipeline/outputs/oof.npy, or "
+                         "$FRIEND_OUT_DIR/oof.npy)")
     ap.add_argument("--outdir", default="artifacts/evidence_oof")
     ap.add_argument("--tag", default="friend")
     # 0.20 keeps the raw pool wide; min_conf below is what the vote filters at.

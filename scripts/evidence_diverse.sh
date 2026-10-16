@@ -21,7 +21,7 @@
 # 56% (ABSENT + TRUNCATED) needs a different or longer model; a 9th DeBERTa-v3
 # seed proposes near-identical candidates to the eight we have and cannot fill
 # ABSENT. Everything decode-side is already closed against a verified 0.8824
-# baseline ([[evidence-decode-is-optimal]]), and min_conf is not starving the
+# baseline (the decode is already optimal), and min_conf is not starving the
 # pool (oracle flat at 0.9493 from 0.05 to 0.50).
 #
 # WHAT LOADS OFFLINE (transformers 4.46.3, HF_HUB_OFFLINE=1):
@@ -39,7 +39,7 @@
 #
 # Trains on train_split and validates on val_split -- the same protocol as the
 # eight deployed taggers, so the result is honestly measurable BEFORE shipping.
-# Nothing here touches full data ([[full-data-runs-leak-on-val]]).
+# Nothing here touches full data (full-data runs leak onto val).
 #
 # Usage (one per backbone, so a partial result is still usable):
 #   sbatch --job-name=ev1024 --export=ALL,TAG=s31_rc,MODEL=microsoft/deberta-v3-large,MAXLEN=1024,BATCH=2,ACCUM=8 scripts/evidence_diverse.sh

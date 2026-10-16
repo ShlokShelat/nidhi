@@ -40,7 +40,7 @@ word counts. Deriving it on the same posts it is scored on would be fitting,
 so the derivation happens on FIT authors and the rule is scored on held-out
 authors, every split.
 
-Scoped POST and SPAN, since [[span-scoped-rules]] found the completed-act
+Scoped POST and SPAN, since span-scoped rules found the completed-act
 pattern tripled precision inside the evidence clause -- and section D's counts
 come from gold spans, so the span is where these words are expected to live.
 

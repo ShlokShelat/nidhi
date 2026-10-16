@@ -44,7 +44,7 @@ Two vocabularies are compared so that finding is not assumed:
                `scars` in particular can be historical
 
 Judged on the joint 0.4*risk + 0.3*evidence, author bootstrap, WIN RATE and
-per-draw sd ([[ci-of-the-mean-error]]). A promotion out of ideation cannot
+per-draw sd, never the CI of the mean. A promotion out of ideation cannot
 create or destroy an `indicator`, so evidence suppression is untouched.
 
 Usage:

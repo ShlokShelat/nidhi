@@ -41,7 +41,7 @@ WHAT IS MEASURED, on the 1590-post OOF with PREDICTED-risk-derived spans:
 
 NO RULE IS SHIPPED FROM THIS. It measures whether the premise holds. The rule
 layer itself cannot currently be rebuilt for test anyway -- the champion's risk
-probabilities do not exist on disk ([[oof-does-not-rank-test]]) -- so this is
+probabilities do not exist on disk, and OOF scores do not rank test -- so this is
 about whether the IDEA is worth building into the submitted pipeline.
 
 Usage:
@@ -160,7 +160,7 @@ def main():
     print(f"  posts where the model's top probability < 0.60: "
           f"{int(band.sum())} ({band.mean():.1%})")
     print("  A rule only matters inside that band -- elsewhere the model is")
-    print("  confident and [[risk-architecture-audit]] showed overriding it")
+    print("  confident and the risk architecture audit showed overriding it")
     print("  loses. Precision INSIDE the band is what decides a rule.\n")
     for nm, rx, tgt, desc in tests:
         pp = np.array([bool(rx.search(t)) for t in post]) & band

@@ -44,7 +44,7 @@ actual tagger spans and suppression driven by the predicted label:
     +all        risk logits + tagger + all 24 factors (L2-regularised; the
                 honest test of whether the extra 20 columns are signal)
 
-Judged on WIN RATE and PER-DRAW sd -- [[ci-of-the-mean-error]].
+Judged on WIN RATE and PER-DRAW sd, never the CI of the mean.
 
 Usage (cluster, CPU, ~3 min):
   python src/risk_crossmodal_stack.py

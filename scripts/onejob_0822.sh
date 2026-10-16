@@ -306,9 +306,8 @@ fi
 # and the analysis would have compared bce_perlabel against bce_perlabel while
 # reporting it as CB-NTR versus its control -- a null result indistinguishable
 # from a real one. The arms are renamed to cbntr/cbctl, and this refuses to
-# start if anything already owns those names. [[hpc-cluster-and-queue]] records
-# TAG collision as a known hazard on this cluster; this is what checking for it
-# looks like.
+# start if anything already owns those names. TAG collision is a known hazard
+# on this cluster; this is what checking for it looks like.
 # It must still allow a RESUME of this same script, so it does not simply test
 # for existence: it checks whether each existing run dir carries the
 # run_config.json this script writes. Ours -> resume. Anyone else's -> stop.

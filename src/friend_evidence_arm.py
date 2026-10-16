@@ -32,7 +32,7 @@ SECURITY: reads only local files under the user's own directories. Nothing
 leaves the machine.
 
 Usage (CPU, seconds):
-  python src/friend_evidence_arm.py --pipeline C:/Users/PC5/Desktop/pipeline \
+  python src/friend_evidence_arm.py --pipeline src/friend_pipeline \
       --outdir artifacts/evidence_runs_friend --thr 0.40
 """
 from __future__ import annotations

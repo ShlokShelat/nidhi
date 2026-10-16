@@ -3,7 +3,7 @@ friend_factor_arm.py
 
 THE FRIEND HAS A COMPLETE FACTOR ARM AND IT HAS NEVER BEEN IN THE POOL.
 
-`C:\\Users\\PC5\\Desktop\\pipeline` is the teammate's system. Its
+`src/friend_pipeline` is the MentalRoBERTa tri-head system. Its
 `outputs/oof_export.csv` carries **all 24 taxonomy labels for 1590 OOF posts**
 and `outputs/factor_probs.csv` the same 24 for the 378 test posts. Neither has
 ever been converted to the `{arm}_cv_oof_f{f}.npz` / `{arm}_cv_test.npz` shape,
@@ -26,8 +26,8 @@ friend is:
     here.
 
 `ltail`'s gain comes from decorrelation, not from its long-tail
-mechanism ([[protective-specialist-dead]]), and decorrelation is exactly what
-a different architecture buys.
+mechanism (a protective-factor specialist gained nothing), and
+decorrelation is exactly what a different architecture buys.
 
 **THE CONSTRUCTION MATCHES, WHICH IS THE PART THAT USUALLY GOES WRONG.**
 Verified by reading the teammate's code:

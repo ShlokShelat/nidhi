@@ -8,7 +8,7 @@ evidence conditioning pays only where P(risk wrong) > ~0.55 in the flagged
 slice, because adding a span costs 0.33 on a correct post and gains ~0.30 on a
 wrong one. The best confidence-based gate reaches **38.7%**, so the lane is
 shut on confidence alone. The oracle upper bound for this lane is documented
-in [[evidence-conditioning-oracle]].
+by the evidence-conditioning oracle.
 
 WHY A DETECTOR MIGHT SUCCEED WHERE A CORRECTOR CANNOT. Every attempt to FIX
 these posts failed -- the factor model separates the behavior/ideation cell
@@ -18,7 +18,7 @@ post correctly" and "notice that this post is ambiguous" are different
 problems, and the second is usually easier: annotator difficulty is often
 predictable even when the correct label is not.
 
-[[risk-architecture-audit]] found errors are CONFIDENTLY wrong, which kills
+The risk architecture audit found errors are CONFIDENTLY wrong, which kills
 confidence as a detector. It says nothing about TEXT as a detector.
 
 THIS SCRIPT IS THE CHEAP PRE-CHECK, deliberately run before any GPU:
@@ -34,9 +34,9 @@ so this precheck saves the GPU spend. If they get close, a cross-encoder is
 very likely to clear it and the oracle-bounded lane opens.
 
 Uses the val twin, whose predictions ARE the deployed chain's
-([[champion-risk-chain-reproduced]]) -- unlike the OOF artefacts, which
-[[gate-validates-operating-point-not-components]] showed do not match what
-ships.
+(the chain was reproduced end to end) -- unlike the OOF artefacts, which
+do not match what ships: the gate validates the operating point, not the
+individual components.
 
 Usage:
   python src/error_predictability.py

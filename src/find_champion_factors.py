@@ -28,7 +28,7 @@ several decodes and reports EXACT-set agreement per post against
 
   argmax-free thresholding is the only decode factors have -- a global
   threshold, a per-label threshold vector (artifacts/factor_thresholds_*.npy),
-  and the shrunk-prevalence decode that [[factor-decode-calibration-bug]]
+  and the shrunk-prevalence decode that an earlier calibration check
   measured as a gain. Whichever reproduces 378/378 IS the shipped decode, and
   its parameters are then known rather than guessed.
 

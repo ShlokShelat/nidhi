@@ -105,7 +105,7 @@ reproduction is designed around it.
 | All code, tests, Slurm job specs | this repository | |
 | Numeric model outputs (68 files: factor scores, risk probabilities) | `artifacts/` here | 2.7 MB |
 | Test posts, training set, evidence spans, submitted predictions (34 files) | gated, see [artifacts/MANIFEST.md](artifacts/MANIFEST.md) | 1.7 MB |
-| 62 trained checkpoints | [`ShlokShlok123/nidhi-weights`](https://huggingface.co/ShlokShlok123/nidhi-weights) (gated) | 86.6 GB |
+| 67 trained checkpoints (62 run directories + 5 MentalRoBERTa folds) | [`ShlokShlok123/nidhi-weights`](https://huggingface.co/ShlokShlok123/nidhi-weights) (gated) | 86.6 GB |
 
 The posts are real crisis posts from a clinical research dataset. Anyone with
 legitimate access to the competition data can obtain the gated files; every

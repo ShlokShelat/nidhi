@@ -352,7 +352,7 @@ Five files marked **[API: posts]** sent post text to a commercial LLM API (DeepS
 | `src/factors_oof_cv.py` | Author-disjoint K-fold cross-validation for the NLI factor model. WHY NOT A PLAIN FULL-DATA RETRAIN. train_factors_nli.py requires --val and |
 | `src/find_champion_factors.py` | WHICH ARTEFACT + DECODE PRODUCED THE CHAMPION'S FACTOR COLUMN? Factors are where the score actually is. S1 is 0.8047 and S2 is 0.6774, and |
 | `src/fold_runs_to_bag.py` | Publish per-fold `val_probs.npz` files into the bag's naming, with checks. WHY THIS IS NOT JUST `cp`. `scripts/factors_qwen_nli.sh` writes |
-| `src/friend_factor_arm.py` | THE FRIEND HAS A COMPLETE FACTOR ARM AND IT HAS NEVER BEEN IN THE POOL. `C:\Users\PC5\Desktop\pipeline` is the teammate's system. Its |
+| `src/friend_factor_arm.py` | THE FRIEND HAS A COMPLETE FACTOR ARM AND IT HAS NEVER BEEN IN THE POOL. `src/friend_pipeline` is the MentalRoBERTa tri-head system. Its |
 | `src/friend_factor_ensemble.py` | Does the friend's FACTOR head add anything to the deployed model? WHY ASK AGAIN. Its standalone macro is 0.4280 even with in-sample thresholds, |
 | `src/gen_rare_factors.py` | Generate synthetic training posts for the factor labels with the fewest real examples. |
 | `src/gen_rare_factors_api.py` **[API: definitions only]** | Generate synthetic training posts for the rare factor labels via the DeepSeek API, with length and diversity designed into the generation. |

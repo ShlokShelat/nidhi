@@ -12,7 +12,7 @@ itself** -- four such labels are worth more than the entire risk gap.
 
 `factor_regime_gap.py` just closed the OOF/test shrinkage lane (median SD ratio
 0.962), so the decode is applying its thresholds to the distribution it was
-fitted on. That rules out the [[factor-decode-calibration-bug]] mechanism as a
+fitted on. That rules out a decode calibration bug as a
 GLOBAL explanation -- but it also showed `poor social support` at SD ratio 0.84
 firing 7.3pp less on test, which a median hides and a macro metric does not.
 
@@ -31,7 +31,7 @@ Read the two gaps:
   oracle-thr -> 1.0    RANKING headroom. Needs a better model; no threshold
                        can reach it.
 
-This is the same split that closed risk: [[risk-architecture-audit]] found risk
+This is the same split that closed risk: the risk architecture audit found risk
 errors were confidently wrong, so decoding could not fix them, and every decode
 experiment afterwards failed exactly as predicted. Doing that test per FACTOR
 label, before building anything, is the cheap version of the lesson.
@@ -60,7 +60,7 @@ from scoring import FACTOR_TAXONOMY  # noqa: E402
 
 N = len(FACTOR_TAXONOMY)
 # The five protective factors, from the organisers' taxonomy. Marked `*` in
-# factor_regime_gap.py's output. [[protective-factor-gap]]: these score 0.504
+# factor_regime_gap.py's output. Protective factors are the weak group: 0.504
 # against the risk factors' 0.651.
 PROTECTIVE = {"social support", "coping strategy", "psychological capital",
               "sense of responsibility", "meaning in life"}

@@ -10,7 +10,7 @@ BUILD THE VALIDATION-SIDE TWIN OF THE CHAMPION'S RISK VECTOR.
 
 But every risk correction has historically been scored against
 `artifacts/champion_oof.csv`, which is a DIFFERENT model: 0.786 where the
-deployed one is ~0.826. [[risk-recalibration-reopens-risk]] shows the failure
+deployed one is ~0.826. Recalibrating risk on it showed the failure
 mode of that substitution -- a stack learned to fix the fold models' errors
 and was applied to a better model that does not make them.
 
@@ -31,9 +31,9 @@ THE LIMIT, STATED UP FRONT. `val_split.csv` is 277 posts from the authors held
 out of `train_split`. That is a fifth of what champion_oof covers, so per-split
 noise is roughly 2.4x wider. It is small and honest, against large and wrong.
 Judge by WIN RATE over author resamples, never the CI of the mean
-([[ci-of-the-mean-error]]).
+(the CI of a mean over overlapping resamples is far too narrow).
 
-Also re-measures the severity nudge from [[evidence-tagger-severity-probe]] on
+Also re-measures the severity nudge from the evidence-tagger severity probe on
 this matched base, since that nudge was previously sized on the mismatched
 one.
 

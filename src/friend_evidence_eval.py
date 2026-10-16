@@ -24,11 +24,11 @@ DIFFERENT family -- which is exactly the parity-plus-diversity condition the
 LoRA experiment showed an ensemble needs, and which the eight near-identical
 seeds do not provide. If it lands far below, the lane closes for zero GPU time.
 
-Runs locally on the Windows PC; the friend's outputs are not on the cluster.
+CPU only, seconds. Needs the tri-head's stage-2 outputs (src/friend_pipeline).
 
 Usage:
   python src/friend_evidence_eval.py \
-      --oof "C:/Users/PC5/Desktop/pipeline/outputs/oof.npy"
+      --oof src/friend_pipeline/outputs/oof.npy
 """
 
 from __future__ import annotations
@@ -79,7 +79,13 @@ def decode(tokp, offs, post, thr, max_words):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--oof",
-                    default="C:/Users/PC5/Desktop/pipeline/outputs/oof.npy")
+                    default=os.path.join(
+                        os.environ.get("FRIEND_OUT_DIR", os.path.join(
+                            os.path.dirname(os.path.abspath(__file__)),
+                            "friend_pipeline", "outputs")), "oof.npy"),
+                    help="the tri-head's stage-2 OOF dump (default: "
+                         "src/friend_pipeline/outputs/oof.npy, or "
+                         "$FRIEND_OUT_DIR/oof.npy)")
     ap.add_argument("--labeled", default="artifacts/full_train.csv")
     ap.add_argument("--max-words", type=int, default=14,
                     help="the friend's own MAX_SPAN_WORDS")

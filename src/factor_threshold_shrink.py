@@ -28,7 +28,7 @@ threshold toward a pooled value, by how little evidence it has.
 (8) is pulled almost entirely to the pool. ONE parameter, k, and the mechanism
 is decided in advance rather than discovered in the data -- which is the
 distinction that separated `route_attempt` from every rule that lost
-([[rules-shelf-closed-provenance]]).
+(see the symbolic-rules rows of docs/AUDIT_MAP.md).
 
 FOUR VARIANTS, all cross-fitted -- thresholds AND k chosen on FIT authors,
 scored on HELD-OUT authors:
@@ -39,14 +39,14 @@ scored on HELD-OUT authors:
               pooled threshold outright. The crude version; if it matches
               `shrink`, prefer it -- it has no continuous parameter.
   prevalence  threshold set so the fire rate equals the label's FIT prevalence.
-              Zero threshold parameters at all. [[factor-decode-calibration-bug]]
+              Zero threshold parameters at all. An earlier calibration check
               measured a gain from a shrunk-prevalence decode, and this is the
               per-label version of that idea.
 
 HONEST EXPECTATION. The oracle headroom above is an upper bound that itself exploits
 noise -- choosing the best threshold ON the held-out data flatters rare labels
 most. Expect to recover a fraction. Judge by WIN RATE over splits and by the
-per-label breakdown, never by the mean alone ([[ci-of-the-mean-error]]).
+per-label breakdown, never by the mean alone or the CI of the mean.
 
 Usage:
   python src/factor_threshold_shrink.py
