@@ -108,6 +108,14 @@ NIDHI_CONDA_ENV=myenv sbatch scripts/risk_nli.sh   # a different env name
 NIDHI_CONDA_ENV=none  sbatch scripts/risk_nli.sh   # use the python already on PATH
 ```
 
+Three environment names appear, and they were genuinely separate environments
+on our cluster: `riskcup2` (almost every job; the one `requirements.txt`
+describes), `riskcup` (the earlier environment, used by `scripts/run_all.sbatch`
+and expected by `scripts/run_gpu.sh`), and `qwen_env` (LLM generation in
+`scripts/augment.sh` and `scripts/augment2.sh`). A single environment built from
+`requirements.txt` is the supported setup; set `NIDHI_CONDA_ENV` to use it for
+all jobs.
+
 Pretrained models resolve through the standard Hugging Face cache
 (`HF_HOME` / `HF_HUB_CACHE`), so nothing assumes a particular home directory.
 
