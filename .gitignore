@@ -1,0 +1,30 @@
+# ---- Never commit post text (see docs/DATA_AND_ETHICS.md) ----
+# The gated, text-bearing files listed in artifacts/MANIFEST.md:
+data/*.csv
+data/*.xlsx
+artifacts/full_train.csv
+artifacts/cot_soft_oof.csv.extra.csv
+artifacts/factors_tfit_test.csv
+artifacts/factors_scaled_test.csv
+artifacts/evidence_runs_ff11/
+submissions/*.csv
+nidhi_gated_bundle*.tar.gz
+
+# ---- Model weights and run outputs (distributed via Hugging Face) ----
+runs/
+artifacts/friend_ckpt/
+*.pt
+*.bin
+*.safetensors
+
+# ---- Python and tooling ----
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+.ipynb_checkpoints/
+.DS_Store
+slurm-*.out
+logs/

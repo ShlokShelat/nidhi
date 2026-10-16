@@ -1,0 +1,19 @@
+name: tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - run: pip install -r requirements-cpu.txt
+      - run: python -m pytest -q tests
+      - name: Every module compiles
+        run: python -m compileall -q src tools
+      - name: No post text is committed
+        run: |
+          for f in data/test.csv artifacts/full_train.csv submissions/NIDHI_scaled.csv; do
+            if [ -e "$f" ]; then echo "::error::$f must not be committed"; exit 1; fi
+          done

@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper."
+title: "Bag of Tricks or Bag of Myths? Reducing Modeling Complexity with Task Knowledge in Explainable Suicide Risk Assessment"
+authors:
+  - family-names: Shelat
+    given-names: Shlok
+  - family-names: Salvi
+    given-names: Shrey
+  - family-names: Roy
+    given-names: Souvik
+  - family-names: Gaur
+    given-names: Manas
+  - family-names: Sheth
+    given-names: Amit
+license: MIT
+repository-code: "https://github.com/ShlokShelat/nidhi"
+preferred-citation:
+  type: article
+  title: "Bag of Tricks or Bag of Myths? Reducing Modeling Complexity with Task Knowledge in Explainable Suicide Risk Assessment"
+  authors:
+    - family-names: Shelat
+      given-names: Shlok
+    - family-names: Salvi
+      given-names: Shrey
+    - family-names: Roy
+      given-names: Souvik
+    - family-names: Gaur
+      given-names: Manas
+    - family-names: Sheth
+      given-names: Amit
+  journal: "arXiv preprint arXiv:2609.07766"
+  year: 2026

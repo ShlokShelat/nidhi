@@ -1,0 +1,50 @@
+# IEEE BigData Cup 2026 - Explainable Suicide Risk Detection (team NIDHI)
+#
+# Verified on Linux with CUDA (one H100 80GB) under conda env `riskcup2`.
+# Python 3.10.
+#
+# transformers is PINNED. 4.46.3 is what every checkpoint in this repo was
+# trained and scored under; 4.48+ changes tokenizer conversion behaviour for
+# deberta-v3 and we have not re-validated against it.
+transformers==4.46.3
+tokenizers>=0.20,<0.21
+sentencepiece>=0.1.99          # deberta-v3 tokenizer; without it the fast
+                               # tokenizer conversion fails
+safetensors>=0.4.0
+accelerate>=0.26.0
+
+# src/fetch_weights.py and src/upload_weights.py import this DIRECTLY, so it is
+# pinned here rather than left to arrive as a transformers dependency
+# (transformers 4.46.3 only requires >=0.23.2). 0.25 is the first version with
+# upload_large_folder / resumable large-folder transfer, which is what moves
+# the ~100 GB of checkpoints. hf_transfer is optional and only makes it faster.
+huggingface_hub>=0.25
+
+# torch: install the build matching your CUDA runtime FIRST, from
+# https://pytorch.org  -- e.g.
+#   pip install torch --index-url https://download.pytorch.org/whl/cu121
+# CPU-only works for scoring and every decode/sweep script, but not for
+# training or for regenerating model dumps.
+torch>=2.1
+
+numpy>=1.24,<2.0
+pandas>=2.0
+scikit-learn>=1.3
+scipy>=1.10
+
+# LoRA factor/risk arms only (train_factors_lora.py, risk_llm_member_build.py).
+# Not needed to reproduce the submission from the shipped checkpoints.
+peft>=0.10.0
+
+# tests
+pytest>=7.4
+
+# Reading the organizers' .xlsx distribution, if you start from that rather
+# than the provided CSVs. src/friend_pipeline/ reads .xlsx directly, so this is
+# required to rebuild the second risk member and the friendfac factor arm.
+openpyxl>=3.1
+
+# Required by the sentencepiece-backed tokenizer conversion path that
+# src/friend_pipeline/ uses. Absent, the tokenizer load fails at import time
+# rather than at first use, so the whole stage aborts before any work is done.
+protobuf
